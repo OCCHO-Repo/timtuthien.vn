@@ -1,0 +1,126 @@
+@media (max-width: 1060px) {
+    .container,
+    .nav-container,
+    .announcement-inner {
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+
+    .nav-links {
+        gap: 12px;
+    }
+
+    .nav-links a:not(.btn) {
+        display: none;
+    }
+
+    .impact-columns {
+        grid-template-columns: 1fr;
+    }
+
+    .impact-col {
+        padding: 24px;
+    }
+
+    .stack-segment span {
+        left: 95px;
+        width: 150px;
+    }
+
+    .cost-col {
+        font-size: 29px;
+    }
+}
+
+@media (max-width: 768px) {
+    body {
+        font-size: 17px;
+    }
+
+    .announcement-inner {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 8px;
+    }
+
+    .nav-container {
+        padding-top: 14px;
+        padding-bottom: 14px;
+    }
+
+    .logo {
+        font-size: 26px;
+        padding: 4px 12px;
+    }
+
+    .logo-divider {
+        height: 24px;
+    }
+
+    .hero-headline {
+        font-size: clamp(42px, 18vw, 72px);
+    }
+
+    .hero-buttons {
+        grid-template-columns: 1fr;
+    }
+
+    .editorial-text {
+        font-size: clamp(32px, 12vw, 52px);
+    }
+
+    .bar-group {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .bar-legend {
+        margin-top: -2px;
+    }
+
+    .section-subtitle {
+        font-size: 18px;
+    }
+
+    .comparison-table {
+        min-width: 700px;
+    }
+
+    .accordion-header {
+        font-size: 12px;
+    }
+
+    .accordion-content p {
+        font-size: 16px;
+    }
+}
+
+@media (max-width: 560px) {
+    .hero-section,
+    .editorial-section,
+    .comparison-section,
+    .mission-section,
+    .emotional-section,
+    .table-section,
+    .faq-section,
+    .cta-section {
+        padding-top: 64px;
+        padding-bottom: 64px;
+    }
+
+    .announcement-note {
+        font-size: 11px;
+    }
+
+    .comparison-table {
+        min-width: 620px;
+    }
+
+    .cost-col {
+        font-size: 24px;
+    }
+
+    .stack-segment span {
+        display: none;
+    }
+}

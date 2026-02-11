@@ -1,143 +1,227 @@
 document.addEventListener('DOMContentLoaded', () => {
-
-    // 1. Scroll Animations (Fade In)
-    const sections = document.querySelectorAll('section');
-
-    const sectionObserverOptions = {
-        root: null,
-        threshold: 0.15,
-        rootMargin: "0px"
+    const CONFIG = {
+        selectors: {
+            sections: 'section',
+            bars: '.bar[data-width]',
+            stackContainers: '.impact-bar-stack',
+            stackSegments: '.stack-segment[data-height]',
+            accordionItems: '.accordion-item',
+            accordionHeaders: '.accordion-header',
+            tabs: '.faq-tab',
+            anchors: 'a[href^="#"]',
+            navbar: '.navbar'
+        },
+        reveal: {
+            threshold: 0.15,
+            rootMargin: '0px'
+        },
+        barAnimation: {
+            threshold: 0.5,
+            delayMs: 180
+        },
+        stackAnimation: {
+            threshold: 0.2,
+            baseDelayMs: 180,
+            staggerMs: 90
+        },
+        accordion: {
+            singleOpen: false
+        }
     };
 
-    const sectionObserver = new IntersectionObserver((entries, observer) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                entry.target.classList.add('is-visible');
-                observer.unobserve(entry.target); // Only animate once
-            }
+    const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+    const queryAll = (selector) => Array.from(document.querySelectorAll(selector));
+
+    const observeOnce = (elements, options, onVisible) => {
+        if (!elements.length) return;
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach((entry) => {
+                if (!entry.isIntersecting) return;
+                onVisible(entry.target);
+                observer.unobserve(entry.target);
+            });
+        }, options);
+
+        elements.forEach((element) => observer.observe(element));
+    };
+
+    const initSectionReveal = () => {
+        const sections = queryAll(CONFIG.selectors.sections);
+        if (!sections.length) return;
+
+        sections.forEach((section) => section.classList.add('fade-in-section'));
+
+        if (prefersReducedMotion) {
+            sections.forEach((section) => section.classList.add('is-visible'));
+            return;
+        }
+
+        observeOnce(
+            sections,
+            {
+                root: null,
+                threshold: CONFIG.reveal.threshold,
+                rootMargin: CONFIG.reveal.rootMargin
+            },
+            (section) => section.classList.add('is-visible')
+        );
+    };
+
+    const initBarChartAnimations = () => {
+        const bars = queryAll(CONFIG.selectors.bars);
+        if (!bars.length) return;
+
+        if (prefersReducedMotion) {
+            bars.forEach((bar) => {
+                bar.style.width = bar.dataset.width || '100%';
+            });
+            return;
+        }
+
+        bars.forEach((bar) => {
+            bar.style.width = '0';
         });
-    }, sectionObserverOptions);
 
-    sections.forEach(section => {
-        section.classList.add('fade-in-section');
-        sectionObserver.observe(section);
-    });
-
-    // 2. Bar Chart Animations (Width)
-    const bars = document.querySelectorAll('.bar[data-width]');
-
-    // Initialize width to 0
-    bars.forEach(bar => {
-        bar.style.width = '0';
-    });
-
-    const barObserver = new IntersectionObserver((entries, observer) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                const bar = entry.target;
-                const width = bar.getAttribute('data-width');
-                // Small delay to let the section fade in first
-                setTimeout(() => {
+        observeOnce(
+            bars,
+            { threshold: CONFIG.barAnimation.threshold },
+            (bar) => {
+                const width = bar.dataset.width || '100%';
+                window.setTimeout(() => {
                     bar.style.width = width;
-                }, 200);
-                observer.unobserve(bar);
+                }, CONFIG.barAnimation.delayMs);
             }
+        );
+    };
+
+    const initStackedBarAnimations = () => {
+        const stackContainers = queryAll(CONFIG.selectors.stackContainers);
+        const stackSegments = queryAll(CONFIG.selectors.stackSegments);
+
+        if (!stackContainers.length || !stackSegments.length) return;
+
+        if (prefersReducedMotion) {
+            stackSegments.forEach((segment) => {
+                segment.style.height = segment.dataset.height || '0';
+            });
+            return;
+        }
+
+        stackSegments.forEach((segment) => {
+            segment.style.height = '0';
+            segment.style.transition = 'height 1.15s cubic-bezier(0.22, 1, 0.36, 1)';
         });
-    }, { threshold: 0.5 });
 
-    bars.forEach(bar => barObserver.observe(bar));
-
-    // 3. Stacked Bar Animations (Height)
-    const stackSegments = document.querySelectorAll('.stack-segment[data-height]');
-    const stackContainers = document.querySelectorAll('.impact-bar-stack');
-
-    // Initialize height to 0
-    stackSegments.forEach(segment => {
-        // Store original transition to restore later if needed, but CSS has it.
-        // We'll set inline transition here to be sure.
-        segment.style.height = '0';
-        segment.style.transition = 'height 1.2s cubic-bezier(0.22, 1, 0.36, 1)';
-    });
-
-    const stackObserver = new IntersectionObserver((entries, observer) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                const container = entry.target;
-                const segments = container.querySelectorAll('.stack-segment');
+        observeOnce(
+            stackContainers,
+            { threshold: CONFIG.stackAnimation.threshold },
+            (container) => {
+                const segments = queryAll(CONFIG.selectors.stackSegments).filter((segment) => container.contains(segment));
 
                 segments.forEach((segment, index) => {
-                    const height = segment.getAttribute('data-height');
-                    // Stagger animations slightly
-                    setTimeout(() => {
-                        segment.style.height = height;
-                    }, index * 100 + 200);
-                });
-
-                observer.unobserve(container);
-            }
-        });
-    }, { threshold: 0.2 });
-
-    stackContainers.forEach(container => stackObserver.observe(container));
-
-    // 4. FAQ Accordion
-    const accordionHeaders = document.querySelectorAll('.accordion-header');
-
-    accordionHeaders.forEach(header => {
-        header.addEventListener('click', () => {
-            const item = header.parentElement;
-            const content = item.querySelector('.accordion-content');
-
-            // Close other items (optional - accordion behavior)
-            // const allItems = document.querySelectorAll('.accordion-item');
-            // allItems.forEach(otherItem => {
-            //     if (otherItem !== item && otherItem.classList.contains('active')) {
-            //         otherItem.classList.remove('active');
-            //         otherItem.querySelector('.accordion-content').style.maxHeight = null;
-            //     }
-            // });
-
-            // Toggle current
-            item.classList.toggle('active');
-
-            if (item.classList.contains('active')) {
-                content.style.maxHeight = content.scrollHeight + "px";
-            } else {
-                content.style.maxHeight = null;
-            }
-        });
-    });
-
-    // 5. FAQ Tabs
-    const tabs = document.querySelectorAll('.faq-tab');
-
-    tabs.forEach(tab => {
-        tab.addEventListener('click', () => {
-            // Remove active class from all tabs
-            tabs.forEach(t => t.classList.remove('active'));
-            // Add active class to clicked tab
-            tab.classList.add('active');
-
-            // In a real app, this would filter the FAQ items. 
-            // For this demo, we'll just simulate a switch (or do nothing as content is static/generic)
-            // If content was specific to tabs, we'd toggle visibility here.
-        });
-    });
-
-    // 6. Smooth Scroll for Anchor Links
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-        anchor.addEventListener('click', function (e) {
-            e.preventDefault();
-            const targetId = this.getAttribute('href');
-            if (targetId === '#') return;
-
-            const targetElement = document.querySelector(targetId);
-            if (targetElement) {
-                targetElement.scrollIntoView({
-                    behavior: 'smooth'
+                    const delay = CONFIG.stackAnimation.baseDelayMs + index * CONFIG.stackAnimation.staggerMs;
+                    window.setTimeout(() => {
+                        segment.style.height = segment.dataset.height || '0';
+                    }, delay);
                 });
             }
-        });
-    });
+        );
+    };
 
+    const closeAccordionItem = (item) => {
+        const content = item.querySelector('.accordion-content');
+        if (!content) return;
+        item.classList.remove('active');
+        content.style.maxHeight = null;
+    };
+
+    const openAccordionItem = (item) => {
+        const content = item.querySelector('.accordion-content');
+        if (!content) return;
+        item.classList.add('active');
+        content.style.maxHeight = `${content.scrollHeight}px`;
+    };
+
+    const initAccordion = () => {
+        const items = queryAll(CONFIG.selectors.accordionItems);
+        const headers = queryAll(CONFIG.selectors.accordionHeaders);
+
+        if (!items.length || !headers.length) return;
+
+        headers.forEach((header) => {
+            header.addEventListener('click', () => {
+                const item = header.closest('.accordion-item');
+                if (!item) return;
+
+                const isOpen = item.classList.contains('active');
+
+                if (CONFIG.accordion.singleOpen) {
+                    items.forEach((otherItem) => {
+                        if (otherItem !== item) closeAccordionItem(otherItem);
+                    });
+                }
+
+                if (isOpen) {
+                    closeAccordionItem(item);
+                } else {
+                    openAccordionItem(item);
+                }
+            });
+        });
+
+        window.addEventListener('resize', () => {
+            items.forEach((item) => {
+                if (!item.classList.contains('active')) return;
+                const content = item.querySelector('.accordion-content');
+                if (content) content.style.maxHeight = `${content.scrollHeight}px`;
+            });
+        });
+    };
+
+    const initFaqTabs = () => {
+        const tabs = queryAll(CONFIG.selectors.tabs);
+        if (!tabs.length) return;
+
+        tabs.forEach((tab) => {
+            tab.addEventListener('click', () => {
+                tabs.forEach((item) => item.classList.remove('active'));
+                tab.classList.add('active');
+            });
+        });
+    };
+
+    const initSmoothScroll = () => {
+        const anchors = queryAll(CONFIG.selectors.anchors);
+        if (!anchors.length) return;
+
+        anchors.forEach((anchor) => {
+            anchor.addEventListener('click', (event) => {
+                const targetId = anchor.getAttribute('href');
+                if (!targetId || targetId === '#') return;
+
+                const targetElement = document.querySelector(targetId);
+                if (!targetElement) return;
+
+                event.preventDefault();
+
+                const navbar = document.querySelector(CONFIG.selectors.navbar);
+                const offset = navbar ? navbar.offsetHeight + 12 : 0;
+                const top = targetElement.getBoundingClientRect().top + window.scrollY - offset;
+
+                window.scrollTo({
+                    top,
+                    behavior: prefersReducedMotion ? 'auto' : 'smooth'
+                });
+            });
+        });
+    };
+
+    initSectionReveal();
+    initBarChartAnimations();
+    initStackedBarAnimations();
+    initAccordion();
+    initFaqTabs();
+    initSmoothScroll();
 });
