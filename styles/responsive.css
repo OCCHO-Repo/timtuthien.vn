@@ -10,6 +10,11 @@
         gap: 12px;
     }
 
+    .lang-btn {
+        min-width: 38px;
+        padding: 7px 9px;
+    }
+
     .nav-links a:not(.btn) {
         display: none;
     }
@@ -124,3 +129,4 @@
         display: none;
     }
 }
+

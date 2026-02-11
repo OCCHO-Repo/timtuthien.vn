@@ -36,6 +36,10 @@
                 <a href="#how-it-works">Cách hoạt động</a>
                 <a href="#top-charities">Tổ chức nổi bật</a>
                 <a href="#about">Giới thiệu</a>
+                <div class="language-toggle" role="group" aria-label="Chọn ngôn ngữ">
+                    <button class="lang-btn active" type="button" data-lang="vi" aria-pressed="true">VI</button>
+                    <button class="lang-btn" type="button" data-lang="en" aria-pressed="false">EN</button>
+                </div>
                 <a href="#start-giving" class="btn btn-primary small">Bắt đầu quyên góp</a>
             </div>
         </div>
@@ -51,15 +55,22 @@
             <div class="search-container">
                 <div class="search-box">
                     <span class="search-label">Tôi quan tâm đến...</span>
-                    <select class="search-select">
-                        <option value="" disabled selected>Chọn lĩnh vực</option>
-                        <option value="clean-water">Nước sạch</option>
-                        <option value="education">Giáo dục</option>
-                        <option value="climate">Biến đổi khí hậu</option>
-                        <option value="poverty">Giảm nghèo</option>
-                        <option value="health">Y tế toàn cầu</option>
-                        <option value="animal-welfare">Phúc lợi động vật</option>
-                    </select>
+                    <div class="search-dropdown">
+                        <button class="search-dropdown-toggle" type="button" aria-haspopup="listbox" aria-expanded="false" aria-label="Chọn lĩnh vực">
+                            <span class="search-dropdown-value">Chọn lĩnh vực</span>
+                            <span class="search-dropdown-caret" aria-hidden="true">▾</span>
+                        </button>
+                        <div class="search-dropdown-menu" role="listbox"></div>
+                        <select class="search-select">
+                            <option value="" disabled selected>Chọn lĩnh vực</option>
+                            <option value="clean-water">Nước sạch</option>
+                            <option value="education">Giáo dục</option>
+                            <option value="climate">Biến đổi khí hậu</option>
+                            <option value="poverty">Giảm nghèo</option>
+                            <option value="health">Y tế toàn cầu</option>
+                            <option value="animal-welfare">Phúc lợi động vật</option>
+                        </select>
+                    </div>
                 </div>
                 <div class="hero-buttons">
                     <button class="btn btn-primary">Tìm tổ chức</button>
@@ -273,7 +284,7 @@
             <div class="accordion">
                 <div class="accordion-item">
                     <button class="accordion-header">
-                        Tìm Từ Thiện chấm điểm tổ chức như thế nào?
+                        <span class="accordion-title">Tìm Từ Thiện chấm điểm tổ chức như thế nào?</span>
                         <span class="icon">+</span>
                     </button>
                     <div class="accordion-content">
@@ -284,7 +295,7 @@
                 </div>
                 <div class="accordion-item">
                     <button class="accordion-header">
-                        Tìm Từ Thiện có miễn phí không?
+                        <span class="accordion-title">Tìm Từ Thiện có miễn phí không?</span>
                         <span class="icon">+</span>
                     </button>
                     <div class="accordion-content">
@@ -294,7 +305,7 @@
                 </div>
                 <div class="accordion-item">
                     <button class="accordion-header">
-                        Tôi có thể quyên góp trực tiếp qua Tìm Từ Thiện không?
+                        <span class="accordion-title">Tôi có thể quyên góp trực tiếp qua Tìm Từ Thiện không?</span>
                         <span class="icon">+</span>
                     </button>
                     <div class="accordion-content">
@@ -304,7 +315,7 @@
                 </div>
                 <div class="accordion-item">
                     <button class="accordion-header">
-                        Điểm khác biệt so với Charity Navigator là gì?
+                        <span class="accordion-title">Điểm khác biệt so với Charity Navigator là gì?</span>
                         <span class="icon">+</span>
                     </button>
                     <div class="accordion-content">
@@ -315,7 +326,7 @@
                 </div>
                 <div class="accordion-item">
                     <button class="accordion-header">
-                        Nền tảng đang bao phủ những lĩnh vực nào?
+                        <span class="accordion-title">Nền tảng đang bao phủ những lĩnh vực nào?</span>
                         <span class="icon">+</span>
                     </button>
                     <div class="accordion-content">
@@ -326,7 +337,7 @@
                 </div>
                 <div class="accordion-item">
                     <button class="accordion-header">
-                        Dữ liệu được cập nhật với tần suất nào?
+                        <span class="accordion-title">Dữ liệu được cập nhật với tần suất nào?</span>
                         <span class="icon">+</span>
                     </button>
                     <div class="accordion-content">
