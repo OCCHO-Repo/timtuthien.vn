@@ -1,1 +1,21 @@
-# timtuthien.github.io
+# Tìm Từ Thiện - Landing Page
+
+Landing page giới thiệu nền tảng khám phá tổ chức từ thiện theo hướng dữ liệu và tác động.
+
+## Tổng quan
+Dự án là trang đơn (single-page) cho thương hiệu **Tìm Từ Thiện**, giúp người dùng tìm tổ chức từ thiện hiệu quả, minh bạch và phù hợp với mục tiêu cá nhân.
+
+## Công nghệ sử dụng
+- **HTML5**
+- **CSS3** (Vanilla, Custom Properties)
+- **JavaScript** (Vanilla, Intersection Observer API)
+- **Fonts**: Instrument Serif, Instrument Sans, IBM Plex Mono (Google Fonts)
+
+## Tính năng
+- **Responsive Design**: Hiển thị tốt trên desktop và mobile.
+- **Scroll Animations**: Hiệu ứng xuất hiện theo vùng, biểu đồ cột động.
+- **Interactive Elements**: FAQ accordion, tab FAQ.
+- **Performance**: Không phụ thuộc framework frontend nặng.
+
+## Cách chạy
+Mở trực tiếp file `index.html` bằng trình duyệt.
