@@ -13,9 +13,18 @@ To make the site easier to maintain, styles are now split into focused files:
 Edit these variables in `styles/theme.css`:
 
 - `--color-bg`, `--color-bg-soft`, `--color-card`
-- `--color-text`, `--color-accent`
+- `--color-text`, `--color-border`, `--color-border-strong`
+- `--color-brand`, `--color-verified`, `--color-caution`, `--color-action`
+- `--color-accent` (alias for highlighted/verified text)
 - `--font-display`, `--font-body`, `--font-mono`
 - `--section-space`, `--container-max`, `--page-padding`
+
+Suggested semantic usage:
+
+- `brand`: platform trust surfaces (nav, structure, dark section backgrounds)
+- `verified`: Green List badges/positive metrics
+- `caution`: Tier-3/high-risk labels and warnings
+- `action`: donate/start CTAs and conversion buttons
 
 ## 2. Font system (Vietnamese-first)
 

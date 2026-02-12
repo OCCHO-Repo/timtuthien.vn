@@ -19,12 +19,7 @@
 
 <body>
 
-    <aside class="announcement-bar" aria-label="Thông báo trang web">
-        <div class="announcement-inner">
-            <span class="announcement-note">Báo cáo tác động mới đang được cập nhật. Theo dõi để nhận dữ liệu từ thiện đã xác minh.</span>
-            <button class="announcement-btn" type="button">Nhận thông báo</button>
-        </div>
-    </aside>
+
 
     <nav class="navbar">
         <div class="nav-container">
@@ -33,14 +28,12 @@
                 <span class="logo-accent">Từ Thiện</span>
             </a>
             <div class="nav-links">
-                <a href="#how-it-works">Cách hoạt động</a>
-                <a href="#top-charities">Tổ chức nổi bật</a>
-                <a href="#about">Giới thiệu</a>
                 <div class="language-toggle" role="group" aria-label="Chọn ngôn ngữ">
                     <button class="lang-btn active" type="button" data-lang="vi" aria-pressed="true">VI</button>
                     <button class="lang-btn" type="button" data-lang="en" aria-pressed="false">EN</button>
                 </div>
-                <a href="#start-giving" class="btn btn-primary small">Bắt đầu quyên góp</a>
+                <!-- Updated CTA text as requested -->
+                <a href="#danh-sach" class="btn btn-primary small">Danh sách</a>
             </div>
         </div>
     </nav>
@@ -56,7 +49,8 @@
                 <div class="search-box">
                     <span class="search-label">Tôi quan tâm đến...</span>
                     <div class="search-dropdown">
-                        <button class="search-dropdown-toggle" type="button" aria-haspopup="listbox" aria-expanded="false" aria-label="Chọn lĩnh vực">
+                        <button class="search-dropdown-toggle" type="button" aria-haspopup="listbox"
+                            aria-expanded="false" aria-label="Chọn lĩnh vực">
                             <span class="search-dropdown-value">Chọn lĩnh vực</span>
                             <span class="search-dropdown-caret" aria-hidden="true">▾</span>
                         </button>
@@ -80,297 +74,11 @@
         </div>
     </section>
 
-    <section class="editorial-section">
-        <div class="container text-container">
-            <p class="editorial-text">
-                Năm vừa rồi, người dân Mỹ đã quyên góp hơn 500 tỷ USD. Nhưng phần lớn nhà hảo tâm không biết tiền của
-                mình được sử dụng hiệu quả đến đâu. Một số tổ chức chi dưới 30% ngân sách cho sứ mệnh thực tế. Cùng một
-                mục tiêu - nước sạch, giáo dục trẻ em, phòng chống dịch bệnh - có thể chênh lệch hiệu quả tới 100 lần,
-                tùy bạn chọn tổ chức nào. Đây là vấn đề hoàn toàn có thể giải quyết.
-            </p>
-        </div>
-    </section>
 
-    <section class="comparison-section" id="how-it-works">
-        <div class="container">
-            <div class="comparison-header">
-                <h2>Chi phí để cứu một mạng sống</h2>
-                <p class="source-label">Nguồn: GiveWell, Charity Navigator, GuideStar (dữ liệu 2024)</p>
-            </div>
-
-            <div class="chart-container">
-                <div class="chart-row">
-                    <div class="chart-label">Chi phí cho mỗi mạng sống được cứu</div>
-                    <div class="chart-bars">
-                        <div class="bar-group">
-                            <div class="bar bar-average" data-width="100%">
-                                <span class="bar-value">12.000 USD+</span>
-                            </div>
-                            <span class="bar-legend">Tổ chức trung bình</span>
-                        </div>
-                        <div class="bar-group">
-                            <div class="bar bar-recommended" data-width="29%">
-                                <span class="bar-value">3.500 USD</span>
-                            </div>
-                            <span class="bar-legend">Đề xuất bởi Tìm Từ Thiện</span>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="chart-row">
-                    <div class="chart-label">Tỷ lệ chi cho chương trình</div>
-                    <div class="chart-bars">
-                        <div class="bar-group">
-                            <div class="bar bar-average" data-width="62%">
-                                <span class="bar-value">62%</span>
-                            </div>
-                        </div>
-                        <div class="bar-group">
-                            <div class="bar bar-recommended" data-width="93%">
-                                <span class="bar-value">93%</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="chart-row">
-                    <div class="chart-label">Điểm minh bạch</div>
-                    <div class="chart-bars">
-                        <div class="bar-group">
-                            <div class="bar bar-average" data-width="75%">
-                                <span class="bar-value">C+</span>
-                            </div>
-                        </div>
-                        <div class="bar-group">
-                            <div class="bar bar-recommended" data-width="98%">
-                                <span class="bar-value">A+</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section class="mission-section" id="about">
-        <div class="container">
-            <div class="mission-content">
-                <h2 class="mission-text">
-                    Kỷ nguyên quyên góp mù mờ đã kết thúc. Với dữ liệu từ thiện toàn diện, Tìm Từ Thiện giúp mỗi đồng
-                    bạn trao đi tạo ra <span class="highlight">tác động tối đa có thể</span>. Chúng tôi đã phân tích hơn
-                    150.000 tổ chức phi lợi nhuận để bạn không phải tự làm điều đó.
-                </h2>
-                <div class="globe-visual">
-                    <div class="globe-circle"></div>
-                </div>
-                <p class="mission-subtext">Giới thiệu quyên góp ưu tiên tác động - cách thông minh hơn để thay đổi thế giới.</p>
-            </div>
-        </div>
-    </section>
-
-    <section class="comparison-section alt-bg">
-        <div class="container">
-            <div class="comparison-header">
-                <h2>Khoản quyên góp 100 USD của bạn, hai kết quả rất khác nhau</h2>
-            </div>
-
-            <div class="impact-comparison">
-                <div class="impact-columns">
-                    <div class="impact-col">
-                        <h3>Không dùng Tìm Từ Thiện</h3>
-                        <div class="impact-bar-stack">
-                            <div class="stack-segment program" data-height="62%" title="Chương trình: 62 USD"><span>62 USD
-                                    Chương trình</span></div>
-                            <div class="stack-segment admin" data-height="28%" title="Quản trị: 28 USD"><span>28 USD
-                                    Quản trị</span>
-                            </div>
-                            <div class="stack-segment fundraising" data-height="10%" title="Gây quỹ: 10 USD"><span>10 USD
-                                    Gây quỹ</span></div>
-                        </div>
-                        <p class="impact-result">~0,3 sinh mạng được tác động</p>
-                    </div>
-
-                    <div class="impact-col highlight-col">
-                        <h3>Dùng Tìm Từ Thiện</h3>
-                        <div class="impact-bar-stack">
-                            <div class="stack-segment program recommended" data-height="93%" title="Chương trình: 93 USD">
-                                <span>93 USD Chương trình</span>
-                            </div>
-                            <div class="stack-segment admin recommended" data-height="5%" title="Quản trị: 5 USD"><span>5 USD
-                                    Quản trị</span></div>
-                            <div class="stack-segment fundraising recommended" data-height="2%" title="Gây quỹ: 2 USD">
-                                <span>2 USD Gây quỹ</span>
-                            </div>
-                        </div>
-                        <p class="impact-result highlight">~2,7 sinh mạng được tác động</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section class="emotional-section">
-        <div class="container">
-            <h2 class="emotional-headline">
-                Đây là thay đổi quan trọng nhất của hoạt động từ thiện trong cả một thế hệ. Cách làm này trao lại quyền
-                chủ động cho người quyên góp và buộc các tổ chức phi lợi nhuận phải chịu trách nhiệm bằng kết quả thực.
-            </h2>
-            <a href="#how-it-works" class="text-link">Xem cách hoạt động →</a>
-        </div>
-    </section>
-
-    <section class="table-section" id="top-charities">
-        <div class="container">
-            <h2 class="section-title">Bằng chứng nằm ở tác động</h2>
-            <p class="section-subtitle">Xem các đề xuất hàng đầu của Tìm Từ Thiện so với các tổ chức quen thuộc</p>
-
-            <div class="table-responsive">
-                <table class="comparison-table">
-                    <thead>
-                        <tr>
-                            <th class="status-col"></th>
-                            <th class="charity-col">Tổ chức</th>
-                            <th class="rating-col">Điểm Tìm Từ Thiện</th>
-                            <th class="cost-col">Chi phí / đơn vị tác động</th>
-                            <th class="transparency-col">Minh bạch</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr class="high-perform">
-                            <td class="status-col">🟢</td>
-                            <td class="charity-col"><strong>Against Malaria Foundation</strong></td>
-                            <td class="rating-col">★★★★★</td>
-                            <td class="cost-col">3.500 USD / mạng sống cứu được</td>
-                            <td class="transparency-col">A+</td>
-                        </tr>
-                        <tr class="high-perform">
-                            <td class="status-col">🟢</td>
-                            <td class="charity-col"><strong>GiveDirectly</strong></td>
-                            <td class="rating-col">★★★★★</td>
-                            <td class="cost-col">750 USD / hộ gia đình cải thiện</td>
-                            <td class="transparency-col">A+</td>
-                        </tr>
-                        <tr class="low-perform">
-                            <td class="status-col">🟡</td>
-                            <td class="charity-col">Tổ chức quy mô lớn A</td>
-                            <td class="rating-col">★★☆☆☆</td>
-                            <td class="cost-col">18.000 USD / mạng sống cứu được</td>
-                            <td class="transparency-col">B-</td>
-                        </tr>
-                        <tr class="low-perform">
-                            <td class="status-col">🔴</td>
-                            <td class="charity-col">Tổ chức quy mô lớn B</td>
-                            <td class="rating-col">★☆☆☆☆</td>
-                            <td class="cost-col">45.000 USD / mạng sống cứu được</td>
-                            <td class="transparency-col">C</td>
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
-            <p class="disclaimer">Xếp hạng dựa trên hồ sơ tài chính công khai và đánh giá tác động độc lập</p>
-        </div>
-    </section>
-
-    <section class="faq-section">
-        <div class="container">
-            <h2 class="section-title">Câu hỏi thường gặp</h2>
-
-            <div class="faq-tabs">
-                <button class="faq-tab active" data-tab="donors">Dành cho nhà hảo tâm</button>
-                <button class="faq-tab" data-tab="nonprofits">Dành cho tổ chức</button>
-                <button class="faq-tab" data-tab="methodology">Phương pháp</button>
-            </div>
-
-            <div class="accordion">
-                <div class="accordion-item">
-                    <button class="accordion-header">
-                        <span class="accordion-title">Tìm Từ Thiện chấm điểm tổ chức như thế nào?</span>
-                        <span class="icon">+</span>
-                    </button>
-                    <div class="accordion-content">
-                        <p>Chúng tôi tổng hợp dữ liệu từ GiveWell, Charity Navigator, GuideStar, ImpactMatters và đội
-                            ngũ nghiên cứu nội bộ. Điểm số dựa trên: tác động trên mỗi USD, minh bạch, sức khỏe tài
-                            chính, trách nhiệm lãnh đạo và kết quả đo lường được.</p>
-                    </div>
-                </div>
-                <div class="accordion-item">
-                    <button class="accordion-header">
-                        <span class="accordion-title">Tìm Từ Thiện có miễn phí không?</span>
-                        <span class="icon">+</span>
-                    </button>
-                    <div class="accordion-content">
-                        <p>Miễn phí 100% cho nhà hảo tâm cá nhân. Chúng tôi được tài trợ bởi các quỹ và gói công cụ
-                            nâng cao dành cho tổ chức lớn.</p>
-                    </div>
-                </div>
-                <div class="accordion-item">
-                    <button class="accordion-header">
-                        <span class="accordion-title">Tôi có thể quyên góp trực tiếp qua Tìm Từ Thiện không?</span>
-                        <span class="icon">+</span>
-                    </button>
-                    <div class="accordion-content">
-                        <p>Có. Bạn có thể quyên góp trực tiếp tới mọi tổ chức trong cơ sở dữ liệu. 100% khoản đóng góp
-                            được chuyển tới tổ chức, chúng tôi không giữ hoa hồng.</p>
-                    </div>
-                </div>
-                <div class="accordion-item">
-                    <button class="accordion-header">
-                        <span class="accordion-title">Điểm khác biệt so với Charity Navigator là gì?</span>
-                        <span class="icon">+</span>
-                    </button>
-                    <div class="accordion-content">
-                        <p>Charity Navigator chủ yếu đo sức khỏe tài chính. Tìm Từ Thiện đi xa hơn bằng cách đo tác động
-                            thực tế trên mỗi USD - không chỉ đánh giá tổ chức vận hành tốt, mà còn tổ chức nào tạo ra
-                            nhiều giá trị nhất trong cùng lĩnh vực.</p>
-                    </div>
-                </div>
-                <div class="accordion-item">
-                    <button class="accordion-header">
-                        <span class="accordion-title">Nền tảng đang bao phủ những lĩnh vực nào?</span>
-                        <span class="icon">+</span>
-                    </button>
-                    <div class="accordion-content">
-                        <p>Chúng tôi bao phủ hơn 30 lĩnh vực: y tế toàn cầu, giảm nghèo, biến đổi khí hậu, giáo dục,
-                            phúc lợi động vật, cải cách tư pháp, cứu trợ thảm họa, sức khỏe tinh thần và nhiều lĩnh vực
-                            khác.</p>
-                    </div>
-                </div>
-                <div class="accordion-item">
-                    <button class="accordion-header">
-                        <span class="accordion-title">Dữ liệu được cập nhật với tần suất nào?</span>
-                        <span class="icon">+</span>
-                    </button>
-                    <div class="accordion-content">
-                        <p>Xếp hạng tổ chức được cập nhật hàng quý. Dữ liệu tài chính được đồng bộ từ hồ sơ IRS 990 và
-                            báo cáo thường niên mới nhất có sẵn.</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section class="cta-section" id="start-giving">
-        <div class="container cta-content">
-            <h2 class="cta-headline">Lòng hảo tâm của bạn xứng đáng tạo tác động lớn hơn.</h2>
-            <button class="btn btn-primary large">Tìm tổ chức phù hợp</button>
-            <a href="#" class="text-link">Hoặc làm bài trắc nghiệm 2 phút →</a>
-            <div class="trust-badges">
-                <p>Dữ liệu từ GiveWell • Charity Navigator • GuideStar • Hồ sơ IRS 990</p>
-            </div>
-        </div>
-    </section>
 
     <footer class="site-footer">
         <div class="container footer-content">
-            <span class="footer-logo">Tìm Từ Thiện</span>
-            <div class="footer-links">
-                <a href="#">Giới thiệu</a>
-                <a href="#">Phương pháp</a>
-                <a href="#">Chính sách bảo mật</a>
-                <a href="#">Liên hệ</a>
-                <a href="#">Dành cho tổ chức</a>
-            </div>
-            <p class="copyright">© 2026 Tìm Từ Thiện. Bảo lưu mọi quyền.</p>
+            <p class="copyright">© 2026 Tìm Từ Thiện contributors. Mã nguồn mở theo giấy phép MIT.</p>
         </div>
     </footer>
 

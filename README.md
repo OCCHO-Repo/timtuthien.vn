@@ -23,3 +23,6 @@ Dự án là trang đơn (single-page) cho thương hiệu **Tìm Từ Thiện**
 
 ## Cách chạy
 Mở trực tiếp file `index.html` bằng trình duyệt.
+
+## License
+Dự án được phát hành theo giấy phép `MIT`. Xem chi tiết tại file `LICENSE`.

@@ -53,7 +53,7 @@
     font-size: 11px;
     text-transform: uppercase;
     letter-spacing: 0.05em;
-    color: rgba(45, 47, 51, 0.7);
+    color: rgba(31, 49, 56, 0.72);
 }
 
 .search-dropdown {
@@ -85,7 +85,7 @@
 
 .search-dropdown-caret {
     font-size: 13px;
-    color: rgba(45, 47, 51, 0.78);
+    color: rgba(31, 49, 56, 0.78);
     transition: transform 0.16s ease;
 }
 
@@ -102,7 +102,7 @@
     border: 1px solid var(--color-border-strong);
     border-radius: var(--radius-sm);
     background: var(--color-card);
-    box-shadow: 0 18px 38px rgba(45, 47, 51, 0.14);
+    box-shadow: 0 18px 38px rgba(53, 80, 112, 0.14);
     padding: 7px;
     display: grid;
     gap: 2px;
@@ -138,12 +138,12 @@
 .search-dropdown-option:hover,
 .search-dropdown-option:focus-visible {
     outline: none;
-    background: rgba(45, 47, 51, 0.08);
+    background: var(--color-brand-soft);
 }
 
 .search-dropdown-option.is-selected {
-    background: rgba(31, 106, 75, 0.13);
-    color: var(--color-accent);
+    background: var(--color-brand-soft);
+    color: var(--color-brand);
     font-weight: 600;
 }
 
@@ -204,7 +204,7 @@
     font-family: var(--font-mono);
     font-size: 12px;
     letter-spacing: 0.02em;
-    color: rgba(45, 47, 51, 0.65);
+    color: rgba(31, 49, 56, 0.66);
 }
 
 .chart-row {
@@ -222,7 +222,7 @@
     font-size: 12px;
     text-transform: uppercase;
     letter-spacing: 0.05em;
-    color: rgba(45, 47, 51, 0.74);
+    color: rgba(31, 49, 56, 0.74);
 }
 
 .chart-bars {
@@ -248,14 +248,14 @@
 }
 
 .bar-average {
-    background: rgba(205, 202, 189, 0.58);
-    border-color: rgba(45, 47, 51, 0.12);
-    color: rgba(45, 47, 51, 0.85);
+    background: rgba(53, 80, 112, 0.16);
+    border-color: rgba(53, 80, 112, 0.3);
+    color: var(--color-brand);
 }
 
 .bar-recommended {
     background: var(--color-accent-soft);
-    border-color: rgba(31, 106, 75, 0.38);
+    border-color: rgba(42, 157, 143, 0.52);
     color: var(--color-accent);
 }
 
@@ -271,7 +271,7 @@
 .bar-legend {
     font-family: var(--font-mono);
     font-size: 12px;
-    color: rgba(45, 47, 51, 0.72);
+    color: rgba(31, 49, 56, 0.74);
     text-transform: uppercase;
     letter-spacing: 0.04em;
 }
@@ -295,7 +295,7 @@
 }
 
 .highlight {
-    color: var(--color-accent);
+    color: var(--color-brand);
 }
 
 .globe-visual {
@@ -304,8 +304,8 @@
     margin: 0 auto 28px;
     border-radius: 50%;
     border: 1px solid var(--color-border);
-    background: linear-gradient(135deg, rgba(223, 217, 203, 0.92), rgba(205, 202, 189, 0.58));
-    box-shadow: inset 0 -18px 35px rgba(45, 47, 51, 0.11), 0 24px 45px rgba(45, 47, 51, 0.13);
+    background: linear-gradient(135deg, rgba(53, 80, 112, 0.3), rgba(42, 157, 143, 0.32));
+    box-shadow: inset 0 -18px 35px rgba(53, 80, 112, 0.16), 0 24px 45px rgba(53, 80, 112, 0.14);
     position: relative;
     overflow: hidden;
 }
@@ -325,13 +325,13 @@
 }
 
 .globe-circle::before {
-    background-image: radial-gradient(circle at center, transparent 59%, rgba(45, 47, 51, 0.18) 60%, transparent 61%),
-        linear-gradient(transparent 49%, rgba(45, 47, 51, 0.14) 50%, transparent 51%),
-        linear-gradient(90deg, transparent 49%, rgba(45, 47, 51, 0.14) 50%, transparent 51%);
+    background-image: radial-gradient(circle at center, transparent 59%, rgba(53, 80, 112, 0.2) 60%, transparent 61%),
+        linear-gradient(transparent 49%, rgba(53, 80, 112, 0.16) 50%, transparent 51%),
+        linear-gradient(90deg, transparent 49%, rgba(53, 80, 112, 0.16) 50%, transparent 51%);
 }
 
 .globe-circle::after {
-    background-image: radial-gradient(rgba(31, 106, 75, 0.45) 1.5px, transparent 1.5px);
+    background-image: radial-gradient(rgba(42, 157, 143, 0.48) 1.5px, transparent 1.5px);
     background-size: 22px 22px;
     mix-blend-mode: multiply;
     opacity: 0.42;
@@ -369,8 +369,8 @@
 }
 
 .highlight-col {
-    border-color: rgba(31, 106, 75, 0.44);
-    background: linear-gradient(170deg, rgba(243, 247, 244, 0.95) 0%, var(--color-card) 100%);
+    border-color: rgba(42, 157, 143, 0.54);
+    background: linear-gradient(170deg, rgba(230, 244, 242, 0.95) 0%, var(--color-card) 100%);
 }
 
 .impact-bar-stack {
@@ -383,7 +383,7 @@
     border: 1px solid var(--color-border);
     border-radius: 3px;
     overflow: hidden;
-    background: rgba(205, 202, 189, 0.34);
+    background: rgba(53, 80, 112, 0.12);
 }
 
 .stack-segment {
@@ -415,27 +415,27 @@
 }
 
 .program {
-    background: rgba(45, 47, 51, 0.25);
+    background: rgba(53, 80, 112, 0.32);
 }
 
 .admin {
-    background: rgba(45, 47, 51, 0.55);
+    background: rgba(53, 80, 112, 0.56);
 }
 
 .fundraising {
-    background: rgba(45, 47, 51, 0.78);
+    background: rgba(53, 80, 112, 0.78);
 }
 
 .program.recommended {
-    background: rgba(31, 106, 75, 0.96);
+    background: rgba(31, 122, 90, 0.96);
 }
 
 .admin.recommended {
-    background: rgba(31, 106, 75, 0.62);
+    background: rgba(31, 122, 90, 0.66);
 }
 
 .fundraising.recommended {
-    background: rgba(31, 106, 75, 0.38);
+    background: rgba(31, 122, 90, 0.4);
 }
 
 .impact-result {
@@ -445,7 +445,7 @@
     font-size: 13px;
     letter-spacing: 0.04em;
     text-transform: uppercase;
-    color: rgba(45, 47, 51, 0.82);
+    color: rgba(31, 49, 56, 0.84);
 }
 
 .impact-result.highlight {
@@ -502,7 +502,7 @@
 .cta-section {
     padding: clamp(72px, 9vw, 116px) 0;
     text-align: center;
-    background: var(--color-text);
+    background: var(--color-brand);
     color: var(--color-card);
     position: relative;
     overflow: hidden;
@@ -513,7 +513,8 @@
     position: absolute;
     inset: -30% -18% auto;
     height: 420px;
-    background: radial-gradient(circle, rgba(223, 217, 203, 0.24) 0%, rgba(223, 217, 203, 0) 74%);
+    background: radial-gradient(circle, rgba(53, 80, 112, 0.12) 0%, rgba(53, 80, 112, 0) 74%);
+    /* Brand soft */
     pointer-events: none;
 }
 
@@ -530,15 +531,16 @@
 }
 
 .cta-section .btn-primary {
-    background: var(--color-card);
-    border-color: rgba(255, 255, 255, 0.5);
-    color: var(--color-text);
+    background: var(--color-action);
+    border-color: var(--color-action);
+    color: var(--color-card);
     font-size: 16px;
     margin-bottom: 20px;
 }
 
 .cta-section .btn-primary:hover {
-    background: #f2f0e5;
+    background: var(--color-action-strong);
+    border-color: var(--color-action-strong);
 }
 
 .cta-section .text-link {

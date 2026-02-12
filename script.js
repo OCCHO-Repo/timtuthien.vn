@@ -144,7 +144,7 @@ document.addEventListener('DOMContentLoaded', () => {
         footer: {
             logo: 'Find Charity',
             links: ['About', 'Methodology', 'Privacy Policy', 'Contact', 'For Organizations'],
-            copyright: '© 2026 Find Charity. All rights reserved.'
+            copyright: '© 2026 Find Charity contributors. Open source under the MIT License.'
         }
     };
 
