@@ -4,9 +4,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tìm Từ Thiện - Cách quyên góp hiệu quả hơn</title>
+    <title>Tìm Từ Thiện</title>
     <meta name="description"
         content="Tìm Từ Thiện giúp bạn khám phá các tổ chức từ thiện uy tín và hiệu quả nhất theo đúng giá trị cá nhân của bạn.">
+    <link rel="icon" type="image/svg+xml" href="assets/icons/favicon.svg">
+    <link rel="shortcut icon" href="assets/icons/favicon.svg">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -22,53 +24,48 @@
 
 
     <nav class="navbar">
-        <div class="nav-container">
-            <a href="#" class="logo" aria-label="Trang chủ Tìm Từ Thiện">
-                <span class="logo-main">Tìm</span>
-                <span class="logo-accent">Từ Thiện</span>
-            </a>
+        <div class="nav-container nav-container-no-logo">
             <div class="nav-links">
                 <div class="language-toggle" role="group" aria-label="Chọn ngôn ngữ">
                     <button class="lang-btn active" type="button" data-lang="vi" aria-pressed="true">VI</button>
                     <button class="lang-btn" type="button" data-lang="en" aria-pressed="false">EN</button>
                 </div>
-                <!-- Updated CTA text as requested -->
-                <a href="#danh-sach" class="btn btn-primary small">Danh sách</a>
+                <button class="nav-menu-symbol" type="button" aria-label="Mở menu">☰</button>
             </div>
         </div>
     </nav>
 
     <section class="hero-section">
         <div class="container hero-content">
-            <h1 class="hero-headline">
-                Tìm các tổ chức từ thiện <span class="accent-text">hiệu quả nhất</span> cho đúng mục tiêu bạn quan tâm.
-            </h1>
-            <p class="hero-subheadline">Dựa trên dữ liệu. Minh bạch. Cá nhân hóa cho bạn.</p>
-
             <div class="search-container">
                 <div class="search-box">
-                    <span class="search-label">Tôi quan tâm đến...</span>
+                    <span class="search-label">Tôi quan tâm đến:</span>
                     <div class="search-dropdown">
                         <button class="search-dropdown-toggle" type="button" aria-haspopup="listbox"
                             aria-expanded="false" aria-label="Chọn lĩnh vực">
+                            <img src="assets/icons/favicon.svg" class="search-dropdown-value-icon" alt=""
+                                aria-hidden="true">
                             <span class="search-dropdown-value">Chọn lĩnh vực</span>
                             <span class="search-dropdown-caret" aria-hidden="true">▾</span>
                         </button>
                         <div class="search-dropdown-menu" role="listbox"></div>
                         <select class="search-select">
                             <option value="" disabled selected>Chọn lĩnh vực</option>
-                            <option value="clean-water">Nước sạch</option>
+                            <option value="disaster-relief">Cứu trợ</option>
+                            <option value="medical-aid">Y tế</option>
+                            <option value="poverty-relief">Giảm nghèo</option>
                             <option value="education">Giáo dục</option>
-                            <option value="climate">Biến đổi khí hậu</option>
-                            <option value="poverty">Giảm nghèo</option>
-                            <option value="health">Y tế toàn cầu</option>
-                            <option value="animal-welfare">Phúc lợi động vật</option>
+                            <option value="child-welfare">Trẻ em</option>
+                            <option value="disability-support">Người khuyết tật</option>
+                            <option value="elder-care">Người cao tuổi</option>
+                            <option value="community-development">Cộng đồng</option>
+                            <option value="environment">Môi trường</option>
+                            <option value="animal-welfare">Động vật</option>
                         </select>
                     </div>
-                </div>
-                <div class="hero-buttons">
-                    <button class="btn btn-primary">Tìm tổ chức</button>
-                    <button class="btn btn-outline">Làm bài trắc nghiệm</button>
+                    <div class="hero-buttons">
+                        <button class="btn btn-primary">Tìm</button>
+                    </div>
                 </div>
             </div>
         </div>
@@ -78,7 +75,7 @@
 
     <footer class="site-footer">
         <div class="container footer-content">
-            <p class="copyright">© 2026 Tìm Từ Thiện contributors. Mã nguồn mở theo giấy phép MIT.</p>
+            <p class="copyright">© 2026 Tìm Từ Thiện. Mã nguồn mở theo giấy phép MIT.</p>
         </div>
     </footer>
 

@@ -1,33 +1,35 @@
 :root {
     /* ---------- Quick Theme Controls ---------- */
-    --color-bg: #f5f7f8;
-    /* Pale Cool Grey */
-    --color-bg-soft: #eaeeef;
-    --color-card: #fcfefe;
-    --color-text: #1f3138;
-    --color-text-soft: rgba(31, 49, 56, 0.74);
-    --color-border: rgba(53, 80, 112, 0.2);
-    --color-border-strong: rgba(53, 80, 112, 0.38);
+    --color-bg: #f7f9fa;
+    /* Soft Cloud */
+    --color-bg-soft: #edf2f4;
+    --color-card: #ffffff;
+    --color-text: #2b3138;
+    --color-text-soft: rgba(43, 49, 56, 0.74);
+    --color-border: rgba(43, 49, 56, 0.16);
+    --color-border-strong: rgba(43, 49, 56, 0.3);
 
     /* Semantic palette */
-    --color-brand: #355070;
-    /* Slate Blue */
-    --color-brand-soft: rgba(53, 80, 112, 0.08);
+    --color-brand: #2a8590;
+    /* Ocean Teal */
+    --color-brand-soft: rgba(42, 133, 144, 0.14);
 
     /* Secondary & Caution - RESTRICTED TO TABLE & DATA ONLY */
-    --color-verified: #2a9d8f;
-    --color-verified-strong: #1f7a5a;
-    --color-verified-soft: rgba(42, 157, 143, 0.16);
+    --color-verified: #1f9a87;
+    --color-verified-strong: #187564;
+    --color-verified-soft: rgba(31, 154, 135, 0.18);
 
-    --color-caution: #e9c46a;
-    --color-caution-strong: #b58d30;
+    --color-caution: #e7c677;
+    --color-caution-strong: #8f6c2b;
     /* Darker for text legibility */
-    --color-caution-soft: rgba(233, 196, 106, 0.28);
+    --color-caution-soft: rgba(231, 198, 119, 0.3);
 
-    --color-action: #e76f51;
-    /* Terra Cotta */
-    --color-action-strong: #cf5d40;
-    --color-action-soft: rgba(231, 111, 81, 0.14);
+    --color-action: #e65540;
+    /* Coral Red */
+    --color-action-strong: #cc4936;
+    --color-action-soft: rgba(230, 85, 64, 0.16);
+    --color-focus: #fde088;
+    --color-focus-soft: rgba(253, 224, 136, 0.45);
 
     /* Backward-compatible aliases */
     --color-accent: var(--color-verified);
@@ -51,7 +53,7 @@
     --radius-sm: 4px;
     --radius-pill: 999px;
 
-    --shadow-soft: 0 24px 50px rgba(53, 80, 112, 0.1);
+    --shadow-soft: 0 22px 48px rgba(42, 133, 144, 0.14);
 
     --motion-fast: 0.2s ease;
     --motion-base: 0.32s ease;
@@ -73,6 +75,9 @@ body {
     font-family: var(--font-body);
     font-size: 18px;
     line-height: 1.6;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
     overflow-x: clip;
     position: relative;
     -webkit-font-smoothing: antialiased;
@@ -93,7 +98,7 @@ body::before {
     right: -260px;
     width: 680px;
     height: 680px;
-    background: radial-gradient(circle, rgba(53, 80, 112, 0.08) 0%, rgba(53, 80, 112, 0) 70%);
+    background: radial-gradient(circle, rgba(42, 133, 144, 0.09) 0%, rgba(42, 133, 144, 0) 70%);
     /* Brand soft */
 }
 
@@ -102,7 +107,7 @@ body::after {
     bottom: -260px;
     width: 740px;
     height: 740px;
-    background: radial-gradient(circle, rgba(53, 80, 112, 0.05) 0%, rgba(53, 80, 112, 0) 74%);
+    background: radial-gradient(circle, rgba(42, 133, 144, 0.06) 0%, rgba(42, 133, 144, 0) 74%);
     /* Brand soft */
 }
 

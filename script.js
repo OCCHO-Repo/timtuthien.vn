@@ -16,6 +16,7 @@ document.addEventListener('DOMContentLoaded', () => {
             searchSelect: '.search-select',
             searchDropdown: '.search-dropdown',
             searchDropdownToggle: '.search-dropdown-toggle',
+            searchDropdownValueIcon: '.search-dropdown-value-icon',
             searchDropdownValue: '.search-dropdown-value',
             searchDropdownMenu: '.search-dropdown-menu',
             searchDropdownOptions: '.search-dropdown-option'
@@ -43,7 +44,7 @@ document.addEventListener('DOMContentLoaded', () => {
     };
 
     const ENGLISH_BUNDLE = {
-        pageTitle: 'Find Charity - Give More Effectively',
+        pageTitle: 'Find Charity',
         metaDescription: 'Find Charity helps you discover the most credible and effective charities aligned with your personal values.',
         htmlLang: 'en',
         aria: {
@@ -68,20 +69,24 @@ document.addEventListener('DOMContentLoaded', () => {
             startGiving: 'Start Giving'
         },
         hero: {
-            headlineHtml: 'Find the <span class="accent-text">most effective</span> charities for the causes you care about.',
-            subheadline: 'Data-backed. Transparent. Personalized for you.',
-            searchLabel: 'I care about...',
+            headlineHtml: 'Find the most effective charities for the causes you care about.',
+            subheadline: '',
+            searchLabel: 'I care about:',
             searchOptions: {
                 __placeholder: 'Select a cause',
-                'clean-water': 'Clean water',
+                'disaster-relief': 'Disaster Relief',
+                'medical-aid': 'Medical Aid',
+                'poverty-relief': 'Poverty Relief',
                 education: 'Education',
-                climate: 'Climate change',
-                poverty: 'Poverty reduction',
-                health: 'Global health',
-                'animal-welfare': 'Animal welfare'
+                'child-welfare': 'Child Welfare',
+                'disability-support': 'Disability Support',
+                'elder-care': 'Elder Care',
+                'community-development': 'Community Development',
+                environment: 'Environment',
+                'animal-welfare': 'Animal Welfare'
             },
-            primaryButton: 'Find charities',
-            secondaryButton: 'Take the quiz'
+            primaryButton: 'Find',
+            secondaryButton: ''
         },
         editorial: {
             text: 'Last year, Americans donated over 500 billion USD. But most donors do not know how effectively their money is used. Some organizations spend under 30% of their budgets on mission delivery. For the same goal - clean water, children\'s education, disease prevention - impact can vary by as much as 100x depending on which organization you choose. This problem is solvable.'
@@ -144,7 +149,7 @@ document.addEventListener('DOMContentLoaded', () => {
         footer: {
             logo: 'Find Charity',
             links: ['About', 'Methodology', 'Privacy Policy', 'Contact', 'For Organizations'],
-            copyright: '© 2026 Find Charity contributors. Open source under the MIT License.'
+            copyright: '© 2026 Find Charity. Open source under the MIT License.'
         }
     };
 
@@ -323,11 +328,29 @@ document.addEventListener('DOMContentLoaded', () => {
     const initCustomSearchSelect = () => {
         const dropdown = getNode(CONFIG.selectors.searchDropdown);
         const toggle = getNode(CONFIG.selectors.searchDropdownToggle);
+        const valueIconNode = getNode(CONFIG.selectors.searchDropdownValueIcon);
         const valueNode = getNode(CONFIG.selectors.searchDropdownValue);
         const menu = getNode(CONFIG.selectors.searchDropdownMenu);
         const select = getNode(CONFIG.selectors.searchSelect);
 
         if (!dropdown || !toggle || !valueNode || !menu || !select) return null;
+
+        const OPTION_ICON_ASSETS = {
+            'disaster-relief': 'assets/icons/disaster-relief.png',
+            'medical-aid': 'assets/icons/medical-aid.png',
+            'poverty-relief': 'assets/icons/poverty-relief.png',
+            education: 'assets/icons/education.png',
+            'child-welfare': 'assets/icons/child-welfare.png',
+            'disability-support': 'assets/icons/disability-support.png',
+            'elder-care': 'assets/icons/elder-care.png',
+            'community-development': 'assets/icons/community-development.png',
+            environment: 'assets/icons/environment.png',
+            'animal-welfare': 'assets/icons/animal-welfare.png'
+        };
+
+        const DEFAULT_ICON_ASSET = 'assets/icons/favicon.svg';
+
+        const getOptionIconPath = (value) => OPTION_ICON_ASSETS[value] || DEFAULT_ICON_ASSET;
 
         const getOptions = () => Array.from(select.options);
 
@@ -350,7 +373,13 @@ document.addEventListener('DOMContentLoaded', () => {
 
         const updateDisplay = () => {
             const displayOption = getSelectedOption();
-            valueNode.textContent = displayOption ? displayOption.textContent.trim() : '';
+            const displayText = displayOption ? displayOption.textContent.trim() : '';
+            const displayIconPath = displayOption ? getOptionIconPath(displayOption.value) : DEFAULT_ICON_ASSET;
+
+            valueNode.textContent = displayText;
+            if (valueIconNode instanceof HTMLImageElement) {
+                valueIconNode.src = displayIconPath;
+            }
         };
 
         const buildMenu = () => {
@@ -369,7 +398,21 @@ document.addEventListener('DOMContentLoaded', () => {
                 const isSelected = option.value === selectedValue;
                 item.classList.toggle('is-selected', isSelected);
                 item.setAttribute('aria-selected', String(isSelected));
-                item.textContent = option.textContent.trim();
+                item.setAttribute('aria-label', option.textContent.trim());
+
+                const icon = document.createElement('img');
+                icon.className = 'search-dropdown-option-icon';
+                icon.setAttribute('aria-hidden', 'true');
+                icon.setAttribute('alt', '');
+                icon.setAttribute('loading', 'lazy');
+                icon.setAttribute('decoding', 'async');
+                icon.src = getOptionIconPath(option.value);
+
+                const label = document.createElement('span');
+                label.className = 'search-dropdown-option-label';
+                label.textContent = option.textContent.trim();
+
+                item.append(icon, label);
 
                 item.addEventListener('click', () => {
                     select.value = option.value;

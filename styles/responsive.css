@@ -11,8 +11,8 @@
     }
 
     .lang-btn {
-        min-width: 38px;
-        padding: 7px 9px;
+        min-width: 42px;
+        padding: 8px 10px;
     }
 
     .nav-links a:not(.btn) {
@@ -49,25 +49,116 @@
     }
 
     .nav-container {
-        padding-top: 14px;
-        padding-bottom: 14px;
+        padding-top: 16px;
+        padding-bottom: 16px;
     }
 
     .logo {
-        font-size: 26px;
-        padding: 4px 12px;
+        font-size: 30px;
+    }
+
+    .logo-orb {
+        width: 34px;
+        height: 34px;
+    }
+
+    .logo-orb::before {
+        width: 16px;
+        height: 16px;
+        top: 6px;
+        left: 6px;
+    }
+
+    .logo-orb::after {
+        width: 13px;
+        height: 3.5px;
+        right: 0;
+        bottom: 6px;
     }
 
     .logo-divider {
         height: 24px;
     }
 
-    .hero-headline {
-        font-size: clamp(42px, 18vw, 72px);
+    .hero-section {
+        min-height: auto;
+        padding-top: 20px;
+        padding-bottom: 36px;
+    }
+
+    .search-container {
+        width: 100%;
+        padding: 0;
+        margin-top: -12px;
+    }
+
+    .search-box {
+        flex-wrap: nowrap;
+        align-items: center;
+        gap: 0;
+        padding: 6px 8px;
+    }
+
+    .search-orb {
+        width: 28px;
+        height: 28px;
+        margin-right: 8px;
+        background-size: 122%;
+    }
+
+    .search-label {
+        font-size: 16px;
+        flex: 0 0 160px;
+        margin-right: 8px;
+        margin-bottom: 0;
+    }
+
+    .search-dropdown {
+        flex: 1 1 auto;
+        max-width: none;
+        min-width: 0;
+        padding: 0 6px;
+    }
+
+    .search-dropdown-toggle {
+        font-size: 16px;
+        min-height: 44px;
+        height: 44px;
+    }
+
+    .search-dropdown-value-icon {
+        width: 26px;
+        height: 26px;
+        min-width: 26px;
+    }
+
+    .search-dropdown-option {
+        font-size: 16px;
     }
 
     .hero-buttons {
-        grid-template-columns: 1fr;
+        flex: 0 0 84px;
+        margin-left: 2px;
+        padding-left: 0;
+    }
+
+    .hero-buttons .btn {
+        font-size: 16px;
+        min-height: 44px;
+        height: 44px;
+        padding: 0 10px;
+        min-width: 0;
+    }
+
+    .lang-btn {
+        font-size: 12px;
+        min-width: 42px;
+        padding: 7px 10px;
+    }
+
+    .nav-menu-symbol {
+        font-size: 24px;
+        padding: 5px 3px;
     }
 
     .editorial-text {
@@ -113,6 +204,67 @@
         padding-bottom: 64px;
     }
 
+    .hero-section {
+        min-height: auto;
+        padding-top: 16px;
+        padding-bottom: 30px;
+    }
+
+    .search-box {
+        flex-wrap: wrap;
+        align-items: center;
+        gap: 8px 0;
+        padding: 8px;
+    }
+
+    .search-label {
+        width: auto;
+        font-size: 15px;
+        flex: 0 0 auto;
+        margin-right: 0;
+        margin-bottom: 0;
+    }
+
+    .search-dropdown {
+        flex-basis: 100%;
+        max-width: none;
+        min-width: 0;
+        padding: 0 3px;
+        margin-top: 2px;
+    }
+
+    .search-dropdown-toggle {
+        font-size: 15px;
+        min-height: 42px;
+        height: 42px;
+    }
+
+    .search-dropdown-option {
+        font-size: 15px;
+    }
+
+    .hero-buttons {
+        width: 100%;
+        flex: 1 1 auto;
+        margin-left: 0;
+        padding-left: 0;
+        border-left: none;
+        border-top: none;
+        padding-top: 8px;
+    }
+
+    .hero-buttons .btn {
+        width: 100%;
+        font-size: 15px;
+        min-height: 42px;
+        height: 42px;
+        padding: 0 10px;
+    }
+
+    .search-dropdown-menu {
+        max-height: min(45vh, 240px);
+    }
+
     .announcement-note {
         font-size: 11px;
     }
@@ -129,4 +281,3 @@
         display: none;
     }
 }
-

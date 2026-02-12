@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="Tim Tu Thien favicon">
+  <defs>
+    <path id="heart-shape" d="M32 57C29 54 9 40 9 24C9 14 16 8 25 8C28 8 30.5 9.1 32 11C33.5 9.1 36 8 39 8C48 8 55 14 55 24C55 40 35 54 32 57Z"/>
+    <clipPath id="heart-clip">
+      <use href="#heart-shape"/>
+    </clipPath>
+  </defs>
+
+  <use href="#heart-shape" fill="#E65540"/>
+  <rect x="32" y="0" width="32" height="64" fill="#2C8C98" clip-path="url(#heart-clip)"/>
+
+  <circle cx="34" cy="32" r="11.5" fill="#FDE088" stroke="#ffffff" stroke-width="2.8"/>
+  <path d="M41.6 39.6L50 48" stroke="#ffffff" stroke-width="4.6" stroke-linecap="round"/>
+</svg>
