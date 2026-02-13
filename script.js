@@ -74,6 +74,7 @@ document.addEventListener('DOMContentLoaded', () => {
             searchLabel: 'I care about:',
             searchOptions: {
                 __placeholder: 'Select a cause',
+                all: 'All',
                 'disaster-relief': 'Disaster Relief',
                 'medical-aid': 'Medical Aid',
                 'poverty-relief': 'Poverty Relief',
@@ -336,6 +337,7 @@ document.addEventListener('DOMContentLoaded', () => {
         if (!dropdown || !toggle || !valueNode || !menu || !select) return null;
 
         const OPTION_ICON_ASSETS = {
+            all: 'assets/icons/all.png',
             'disaster-relief': 'assets/icons/disaster-relief.png',
             'medical-aid': 'assets/icons/medical-aid.png',
             'poverty-relief': 'assets/icons/poverty-relief.png',
